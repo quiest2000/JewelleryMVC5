@@ -38,7 +38,7 @@ namespace WebsiteTrangSuc.Controllers
         public PartialViewResult Banner()
         {
             var slideshow = db.QuangCaos.Where(s => s.LangID == "vi-VN").OrderBy(s => s.AdsIndex).ToList();
-            
+
             return PartialView(slideshow);
         }
         public PartialViewResult MenuCon()
@@ -57,12 +57,12 @@ namespace WebsiteTrangSuc.Controllers
             var address = db.BaiVietHeThongs.Where(s => s.cCode == "Address" && s.cLangID == "vi-VN").ToList().FirstOrDefault();
             ViewBag.address = address;
             return PartialView();
-          
+
         }
         public ActionResult DangNhap()
         {
 
-            return View(); 
+            return View();
         }
         [HttpPost]
         public ActionResult DangNhap(string txtTen, string txtMatKhau)
@@ -110,16 +110,16 @@ namespace WebsiteTrangSuc.Controllers
         public ActionResult Thoat()
         {
             Session["KH"] = null;
-          
+
             return RedirectToAction("Index");
         }
         [HttpPost]
-        public ActionResult Timkiem(string txtTimKiem) 
+        public ActionResult Timkiem(string txtTimKiem)
         {
             List<Sanpham> kqtk = db.Sanphams.Where(s => s.Tukhoa.Contains(txtTimKiem)).ToList();
             //var ds = db.Sanphams.Where(s => s.Tukhoa.Contains(txtTimKiem)).ToList();
-            
-            if ( kqtk.Count != 0)
+
+            if (kqtk.Count != 0)
             {
                 return PartialView(kqtk);
             }
@@ -128,7 +128,7 @@ namespace WebsiteTrangSuc.Controllers
                 ViewBag.thongbao = "Không tìm thấy sản phẩm cần tìm";
                 return View();
             }
-            
+
         }
         public PartialViewResult Hotnumber()
         {
@@ -136,6 +136,11 @@ namespace WebsiteTrangSuc.Controllers
             ViewBag.hotnumber = hotnumber;
             return PartialView(hotnumber);
         }
+
+        [HttpGet]
+        public ActionResult Thongtinkhachhang(int id)
+        {
+            return RedirectToAction("Thongtinkhachhang", "KhachHang", id);
+        }
     }
-    
 }

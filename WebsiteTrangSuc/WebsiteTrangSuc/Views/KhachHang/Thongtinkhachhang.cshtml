@@ -1,109 +1,160 @@
-﻿@model IEnumerable<WebsiteTrangSuc.Models.KhachHang>
+﻿@using System.Reflection
+@using WebsiteTrangSuc.Models
+@model WebsiteTrangSuc.Models.KhachHang
 
 @{
     ViewBag.Title = "Thongtinkhachhang";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@*@Html.DisplayForModel(Model)*@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Tentruynhap)
+            @Html.DisplayNameFor(model => model.IdKhachhang)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Matkhau)
+            @Html.DisplayFor(model => model.IdKhachhang)
         </th>
+        @for (var i = 0; i < 10; i++)
+        {
+            <th></th>
+        }
+    </tr>
+    <tr>
         <th>
             @Html.DisplayNameFor(model => model.Tenkhachhang)
         </th>
         <th>
+            @Html.DisplayFor(model => model.Tenkhachhang)
+        </th>
+        @for (var i = 0; i < 10; i++)
+        {
+            <th></th>
+        }
+    </tr>
+    <tr>
+        <th>
             @Html.DisplayNameFor(model => model.Ngaysinh)
         </th>
+        <th>
+            @Html.DisplayFor(model => model.Ngaysinh)
+        </th>
+        @for (var i = 0; i < 10; i++)
+        {
+            <th></th>
+        }
+    </tr>
+    <tr>
         <th>
             @Html.DisplayNameFor(model => model.Gioitinh)
         </th>
         <th>
+            @Html.DisplayFor(model => model.Gioitinh)
+        </th>
+        @for (var i = 0; i < 10; i++)
+        {
+            <th></th>
+        }
+    </tr>
+    <tr>
+        <th>
             @Html.DisplayNameFor(model => model.Diachi)
         </th>
+        <th>
+            @Html.DisplayFor(model => model.Diachi)
+        </th>
+        @for (var i = 0; i < 10; i++)
+        {
+            <th></th>
+        }
+    </tr>
+    <tr>
         <th>
             @Html.DisplayNameFor(model => model.Dienthoai)
         </th>
         <th>
+            @Html.DisplayFor(model => model.Dienthoai)
+        </th>
+        @for (var i = 0; i < 10; i++)
+        {
+            <th></th>
+        }
+    </tr>
+    <tr>
+        <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Cauhoi)
+            @Html.DisplayFor(model => model.Email)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Traloi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Muc)
-        </th>
+        @for (var i = 0; i < 10; i++)
+        {
+            <th></th>
+        }
+    </tr>
+    <tr>
         <th>
             @Html.DisplayNameFor(model => model.Ngaytao)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TieuDe)
+            @Html.DisplayFor(model => model.Ngaytao)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Noidung)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Thucthi)
-        </th>
-        <th></th>
+        @for (var i = 0; i < 10; i++)
+        {
+            <th></th>
+        }
     </tr>
+    @*@foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tentruynhap)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Matkhau)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tenkhachhang)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ngaysinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gioitinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Diachi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dienthoai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cauhoi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Traloi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Muc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ngaytao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TieuDe)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Noidung)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Thucthi)
+                </td>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tentruynhap)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Matkhau)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tenkhachhang)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ngaysinh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gioitinh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Diachi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dienthoai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cauhoi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Traloi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Muc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ngaytao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TieuDe)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Noidung)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Thucthi)
-            </td>
-           
-        </tr>
-    }
+            </tr>
+        }*@
 
 </table>
