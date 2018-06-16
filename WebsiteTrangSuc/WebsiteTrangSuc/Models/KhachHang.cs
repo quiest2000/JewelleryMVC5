@@ -26,7 +26,7 @@
         public DateTime? Ngaysinh { get; set; }
         [Display(Name ="Giới tính")]
         public short? Gioitinh { get; set; }
-        [Display(Name ="Dịa chỉ")]
+        [Display(Name ="Địa chỉ")]
         [StringLength(200)]
         public string Diachi { get; set; }
         [Display(Name ="Điện thoại")]
